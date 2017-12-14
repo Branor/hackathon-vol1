@@ -9,5 +9,8 @@ COPY / /sinatra/
 
 # Update ElasticSearch Target
 ENV ELASTICSEARCH_HOST=<hostname/ip>:9200
+ENV COUCHBASE_REST=<hostname/ip>:8093
+ENV COUCHBASE_USERNAME=admin
+ENV COUCHBASE_PASSWORD=123456
 EXPOSE 8081
-ENTRYPOINT ["shotgun", "--host", "0.0.0.0", "--port", "8081", "/sinatra/webapp.rb"]
+ENTRYPOINT ["shotgun", "--host", "0.0.0.0", "--port", "8081", "/sinatra/webapp_cb.rb"]

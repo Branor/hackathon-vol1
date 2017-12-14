@@ -1,15 +1,15 @@
-FROM ruby:2.2.4-alpine
+FROM ruby:2.4.2-alpine
 MAINTAINER Clemens Siebler <clemens.siebler@gmail.com>
 
-RUN apk add --update make gcc libc-dev
-RUN gem install rest_client sinatra shotgun haml elasticsearch
+RUN apk add --update make gcc g++ libc-dev
+RUN gem install rest-client sinatra shotgun haml elasticsearch
 
 RUN mkdir /sinatra
 COPY / /sinatra/
 
 # Update ElasticSearch Target
 ENV ELASTICSEARCH_HOST=<hostname/ip>:9200
-ENV COUCHBASE_REST=<hostname/ip>:8093
+ENV COUCHBASE_REST=http://<hostnae/ip>:8093/query/service
 ENV COUCHBASE_USERNAME=admin
 ENV COUCHBASE_PASSWORD=123456
 EXPOSE 8081

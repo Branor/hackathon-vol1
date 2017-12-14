@@ -9,7 +9,7 @@ COPY / /sinatra/
 
 # Update ElasticSearch Target
 ENV ELASTICSEARCH_HOST=<hostname/ip>:9200
-ENV COUCHBASE_REST=http://<hostnae/ip>:8093/query/service
+ENV COUCHBASE_REST=http://<hostname/ip>:8093/query/service
 ENV COUCHBASE_USERNAME=admin
 ENV COUCHBASE_PASSWORD=123456
 EXPOSE 8081
